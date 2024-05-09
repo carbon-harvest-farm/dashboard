@@ -43,6 +43,16 @@ class LayoutContainer extends HTMLElement {
             flex-direction: column;
           }
 
+          .logout {
+            background-color: rgb(var(--color-red-500));
+            border: none;
+            color: rgb(var(--color-red-950));
+            font-size: var(--font-size-xl);
+            width: 100%;
+            padding: 10px;
+            border-radius: var(--radius-md);
+          }
+
         </style>
         <section class="main-container">
           <div class="navigation-container">
@@ -51,7 +61,7 @@ class LayoutContainer extends HTMLElement {
                 Logo
 
                 </div>
-                <button>Sair</button>
+                <button class="logout">Sair</button>
             </nav>
           </div>
           <div class="content">
