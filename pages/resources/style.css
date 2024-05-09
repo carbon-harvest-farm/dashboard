@@ -1,7 +1,3 @@
-.resources-layout {
-  padding: 15px;
-}
-
 .resources-hero {
   background-color: rgb(var(--color-background-contrast));
   box-shadow: var(--shadow-sm);

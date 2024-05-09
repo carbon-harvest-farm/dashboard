@@ -9,22 +9,27 @@
   <title>Carbon Harvest Farm - Dashboard</title>
 </head>
 
-<body class="container resources-layout">
-  <div class="resources-hero">
-    <div class="resources-herocontent">
-      <img class="resources-heroimg" src="../../assets/resources.png" />
-      <div class="resources-columnstart">
-        <h1>Recursos</h1>
-        <p>Recursos da instalação</p>
-        <span id="totalSectors" class="resources-counter"></span>
-        <span id="totalResources" class="resources-counter"></span>
+<body>
+  <layout-container>
+    <div class="container">
+      <div class="resources-hero">
+        <div class="resources-herocontent">
+          <img class="resources-heroimg" src="../../assets/resources.png" />
+          <div class="resources-columnstart">
+            <h1>Recursos</h1>
+            <p>Recursos da instalação</p>
+            <span id="totalSectors" class="resources-counter"></span>
+            <span id="totalResources" class="resources-counter"></span>
+          </div>
+        </div>
       </div>
+    
+      <div id="table" class="table-container"></div>
     </div>
-  </div>
-
-  <div id="table" class="table-container"></div>
+  </layout-container>
   <script src="../../mocks/resources.js"></script>
   <script src="./index.js"></script>
+  <script src="../../components/navigation/navigation.js"></script>
 </body>
 
 </html>
