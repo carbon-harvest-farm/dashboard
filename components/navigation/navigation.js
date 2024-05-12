@@ -1,12 +1,54 @@
+let notifications = [
+  {
+    hasRead: false,
+    emitedAt: "2023-10-05T14:48:00.000Z",
+    type: "danger",
+    title: "Terra com baixa umidade",
+    message: "O seu cultivo de Abobrinha no setor A1 Bloco 8 apresenta umidade abaixo do recomendado nas coordenadas 87798779 - 3212333.",
+    deeplink: "/pages/monitoring"
+  },
+  {
+    hasRead: true,
+    emitedAt: "2022-03-15T10:30:00.000Z",
+    type: "info",
+    title: "Atualização de Software",
+    message: "Uma nova versão do software de monitoramento está disponível. Por favor, atualize para garantir o melhor desempenho e segurança.",
+    deeplink: "/pages/update"
+  },
+  {
+    hasRead: false,
+    emitedAt: "2024-05-01T08:00:00.000Z",
+    type: "good",
+    title: "Colheita Bem-Sucedida",
+    message: "Parabéns! A colheita de Milho no setor B3 Bloco 12 foi bem-sucedida. Os resultados estão acima das expectativas.",
+    deeplink: "/pages/harvest"
+  },
+  {
+    hasRead: true,
+    emitedAt: "2022-08-20T14:30:00.000Z",
+    type: "warning",
+    title: "Manutenção Agendada",
+    message: "No dia 25 de agosto, haverá uma manutenção programada no sistema. Algumas funcionalidades podem ficar temporariamente indisponíveis.",
+    deeplink: "/pages/schedule"
+  },
+  {
+    hasRead: false,
+    emitedAt: "2024-02-15T11:45:00.000Z",
+    type: "danger",
+    title: "Alerta de Pragas",
+    message: "Detectamos um aumento na presença de pragas no cultivo de Tomate no setor C2 Bloco 5. Recomendamos a aplicação de medidas de controle imediatamente.",
+    deeplink: "/pages/pest-control"
+  }
+];
+
 class LayoutContainer extends HTMLElement {
   constructor() {
     super();
 
-    // Crie o template do componente
     const containerTemplate = document.createElement("template");
     containerTemplate.innerHTML = `
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <style>
+      <style>
           /* Estilos específicos para o componente */
           .main-container {
             display: flex;
@@ -33,6 +75,8 @@ class LayoutContainer extends HTMLElement {
           }
 
           .content {
+            display: flex;
+            flex-direction: column;
             width: 100%;
             max-width: 1024px;
             padding: 15px;
@@ -77,6 +121,23 @@ class LayoutContainer extends HTMLElement {
             width: 100%;
           }
 
+          .notify-counter {
+            position: absolute;
+            top: -5px;
+            right: 0;
+            color: white;
+            z-index: 40;
+            font-size: var(--font-size-xs);
+            background-color: rgb(var(--color-red-500));
+            height: 18px;
+            width: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+          }
+
           .full-size {
             width: 200px;
             padding: 15px;
@@ -93,6 +154,7 @@ class LayoutContainer extends HTMLElement {
           }
 
           .navigation-item {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -111,6 +173,7 @@ class LayoutContainer extends HTMLElement {
           }
 
           .navigation-item-small {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -130,7 +193,7 @@ class LayoutContainer extends HTMLElement {
 
           .control-nav {
             position: absolute;
-            z-index: 40;
+            z-index: 30;
             right: -30px;
             font-size: var(--font-size-xl);
             background-color: white;
@@ -142,10 +205,10 @@ class LayoutContainer extends HTMLElement {
 
         </style>
         <section class="main-container">
-          <div id="nav-menu" class="navigation-container full-size">
+          <div id="nav-menu" class="navigation-container small-size">
             <button id="cnav" class="control-nav"></i></button>
             <nav class="navigation-content">
-            <div class="hidden-item menu-label small-visibility small-menu">
+            <div class="menu-label small-visibility small-menu">
               <div class="navigation-menu-small">
               <a class="navigation-item-small nav-interations" href="/pages/dashboard">
               <i class="bi bi-house"></i>
@@ -157,6 +220,7 @@ class LayoutContainer extends HTMLElement {
                 <i class="bi bi-eye"></i>
               </a>
               <a class="navigation-item-small nav-interations" href="/pages/notifications">
+                <span class="notify-counter hidden-item"></span>  
                 <i class="bi bi-bell"></i>
               </a>
               <a class="navigation-item-small nav-interations" href="/pages/faq">
@@ -165,7 +229,7 @@ class LayoutContainer extends HTMLElement {
               </div>
             </div>
 
-                <div class="navigation-menu full-visibility menu-label">
+                <div class="navigation-menu hidden-item full-visibility menu-label">
                 <a class="navigation-item nav-interations" href="/pages/dashboard">
                 <i class="bi bi-house"></i>
                   <span>
@@ -186,6 +250,7 @@ class LayoutContainer extends HTMLElement {
                 </a>
                 <a class="navigation-item nav-interations" href="/pages/notifications">
                   <i class="bi bi-bell"></i>
+                  <span class="notify-counter hidden-item"></span>
                   <span>
                   Notificações
                   </span>
@@ -198,7 +263,7 @@ class LayoutContainer extends HTMLElement {
                 </a>
                 </div>
 
-                <button class="logout">
+                <button class="logout" id="btnLogout">
                   <i class="bi bi-door-closed"></i>
                   <span class="menu-label full-visibility">
                   Desconectar
@@ -235,9 +300,9 @@ class LayoutContainer extends HTMLElement {
           navMenu.classList.add("full-size");
         }
 
-        navElement.innerHTML =  !expandedParsedValue ?
-        `<i class="bi bi-chevron-double-right">`
-        : `<i class="bi bi-chevron-double-left">`;
+        navElement.innerHTML = !expandedParsedValue ?
+          `<i class="bi bi-chevron-double-right">`
+          : `<i class="bi bi-chevron-double-left">`;
 
       } else {
         if (expandedParsedValue === true) {
@@ -252,9 +317,9 @@ class LayoutContainer extends HTMLElement {
           navMenu.classList.add("full-size");
         }
 
-        navElement.innerHTML =  expandedParsedValue ?
-        `<i class="bi bi-chevron-double-right">`
-        : `<i class="bi bi-chevron-double-left">`;
+        navElement.innerHTML = expandedParsedValue ?
+          `<i class="bi bi-chevron-double-right">`
+          : `<i class="bi bi-chevron-double-left">`;
 
       }
 
@@ -266,10 +331,30 @@ class LayoutContainer extends HTMLElement {
     shadowRoot.appendChild(containerTemplate.content.cloneNode(true));
     const navMenu = this.shadowRoot.getElementById("nav-menu");
     const controlNav = this.shadowRoot.getElementById("cnav");
-    
+
     controlNav.addEventListener("click", () => menuVisibility(true, controlNav));
 
-    window.addEventListener("load", () => menuVisibility(false, controlNav));
+    window.addEventListener("load", () => {
+      const notificationComponent = this.shadowRoot.querySelectorAll(".notify-counter");
+      const newNotifications = notifications.filter((item) => !item.hasRead);
+
+      if (newNotifications) {
+        notificationComponent.forEach((item) => {
+          item.classList.remove("hidden-item");
+
+          item.textContent = newNotifications.length > 9 ? "+9" : newNotifications.length;
+        });
+      }
+
+      menuVisibility(false, controlNav);
+    });
+
+    var btnLogout = this.shadowRoot.getElementById("btnLogout");
+    btnLogout.addEventListener("click", () => {
+      localStorage.removeItem("user-login");
+
+      return window.location.href = "/pages/"
+    });
   }
 }
 

@@ -624,3 +624,34 @@ table {
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+.hero {
+  background-color: rgb(var(--color-background-contrast));
+  box-shadow: var(--shadow-sm);
+  background-image: url('../../assets/f-sprite.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.hero-content {
+  background-color: rgba(var(--color-zinc-900), 0.8);
+  backdrop-filter: blur(var(--blur));
+  padding: 15px;
+  display: flex;
+  width: 100%;
+  color: white;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+}
+
+.hero-img {
+  width: 160px;
+}

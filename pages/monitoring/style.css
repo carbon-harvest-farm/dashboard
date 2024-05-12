@@ -1,0 +1,134 @@
+.monitor-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 3px dashed rgb(var(--color-zinc-500), 0.4);
+  background-color: white;
+  padding: 10px;
+  gap: 3px;
+}
+
+.tile-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  border-radius: var(--radius-md);
+  height: 90px;
+  transition: background-color 200ms;
+}
+
+.monitor-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--font-size-sm);
+}
+
+.caption {
+  color: rgb(var(--color-zinc-400));
+  font-size: var(--font-size-xs);
+}
+
+.monitor-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 30;
+  flex-direction: column;
+  position: absolute;
+  bottom: 90%;
+  right: -70%;
+  background-color: rgba(var(--color-zinc-950), 0.9);
+  color: rgb(var(--color-zinc-100));
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  border: 1px solid rgb(var(--color-zinc-800));
+  overflow: hidden;
+  visibility: hidden;
+  height: 0px;
+}
+
+.hidden-card {
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+}
+
+.active-card {
+  visibility: visible;
+  height: 250px;
+  transition: all 150ms;
+  min-width: 140px;
+}
+
+.danger {
+  border: 2px dotted rgb(var(--color-red-700), 0.8);
+}
+
+.good {
+  border: 2px dotted rgb(var(--color-green-700), 0.8);
+}
+
+.info {
+  border: 2px dotted rgb(var(--color-blue-700), 0.8);
+}
+
+.warning {
+  border: 2px dotted rgb(var(--color-amber-600), 0.8);
+}
+
+.danger:hover {
+  background-color: rgb(var(--color-red-500), 0.5);
+}
+
+.good:hover {
+  background-color: rgb(var(--color-green-500), 0.5);
+}
+
+.warning:hover {
+  background-color: rgb(var(--color-amber-500), 0.5);
+}
+
+.info:hover {
+  background-color: rgb(var(--color-blue-500), 0.5);
+}
+
+.tile-sprite {
+  width: 80px;
+}
+
+.heading {
+  font-size: var(--font-size-lg);
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.monitor-profit {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.caption-profit {
+  font-size: var(--font-size-md);
+  color: rgb(var(--color-emerald-600));
+  font-weight: bold;
+}

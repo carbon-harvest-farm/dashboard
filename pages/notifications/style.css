@@ -1,0 +1,123 @@
+.notifications-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.notification {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: white;
+  border-radius: var(--radius-md);
+  width: 100%;
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 30;
+}
+
+.notification-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+}
+
+.notification-badge {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(var(--color-zinc-200));
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  position: absolute;
+  z-index: 20;
+  padding: 5px;
+  bottom: 100%;
+  left: 5px;
+  color: black;
+  font-size: var(--font-size-xs);
+}
+
+.notification-mark {
+  padding-left: 55px;
+  text-decoration: underline;
+  font-size: var(--font-size-xs);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.notification-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  width: 100%;
+}
+
+.notification-content {
+  padding: 10px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  font-size: var(--font-size-sm);
+}
+
+.notification-footer {
+  padding: 10px;
+  width: 100%;
+  font-size: var(--font-size-xs);
+}
+
+.danger {
+  background-color: rgb(var(--color-red-500));
+  color: white;
+}
+
+.info {
+  background-color: rgb(var(--color-blue-500));
+  color: white;
+}
+
+.warning {
+  background-color: rgb(var(--color-amber-500));
+  color: black;
+}
+
+.good {
+  background-color: rgb(var(--color-primary));
+  color: black;
+}
+
+.notify-danger {
+  background-color: rgb(var(--color-red-600));
+  color: white;
+}
+
+.notify-info {
+  background-color: rgb(var(--color-blue-600));
+  color: white;
+}
+
+.notify-warning {
+  background-color: rgb(var(--color-amber-600));
+  color: black;
+}
+
+.notify-good {
+  background-color: rgb(var(--color-green-600));
+  color: black;
+}

@@ -1,14 +1,3 @@
-.resources-hero {
-  background-color: rgb(var(--color-background-contrast));
-  box-shadow: var(--shadow-sm);
-  background-image: url('../../assets/f-sprite.jpeg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
 .resources-columnstart {
   display: flex;
   align-items: start;
@@ -19,26 +8,6 @@
 
 .resources-counter {
   font-size: var(--font-size-xs);
-}
-
-.resources-herocontent {
-  background-color: rgba(var(--color-zinc-900), 0.8);
-  backdrop-filter: blur(var(--blur));
-  padding: 15px;
-  display: flex;
-  width: 100%;
-  color: white;
-  align-items: center;
-  gap: 10px;
-}
-
-.resources-hero h1 {
-  font-size: var(--font-size-3xl);
-  font-weight: 700;
-}
-
-.resources-heroimg {
-  width: 200px;
 }
 
 .table-container {

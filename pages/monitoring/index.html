@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../global.css">
   <link rel="stylesheet" href="./style.css">
-  <title>Carbon Harvest Farm - Dashboard</title>
+  <title>Carbon Harvest Farm - Monitoramento</title>
 </head>
 
 <body>
@@ -14,20 +14,27 @@
     <div class="container">
       <div class="hero">
         <div class="hero-content">
-          <img class="hero-img" src="../../assets/resources.png" />
+          <img class="hero-img" src="../../assets/monitoring.png" />
           <div class="column-start">
-            <h1>Recursos</h1>
-            <p>Recursos da instalação</p>
-            <span id="totalSectors" class="resources-counter"></span>
-            <span id="totalResources" class="resources-counter"></span>
+            <h1>Monitoramento</h1>
+            <p>Monitoramento de cultivos</p>
           </div>
         </div>
       </div>
-    
-      <div id="table" class="table-container"></div>
+
+      <div class="monitor-profit">
+        <div class="row">
+          <i class="bi bi-cash-stack"></i>
+          <p>Lucro total estimado</p>
+        </div>
+        <p class="caption-profit" id="total-profit"></p>
+      </div>
+
+      <div id="monitor" class="monitor-container">
+      </div>
     </div>
   </layout-container>
-  <script src="../../mocks/resources.js"></script>
+  <script src="../../mocks/monitoring.js"></script>
   <script src="./index.js"></script>
   <script src="../../components/navigation/navigation.js"></script>
 </body>
