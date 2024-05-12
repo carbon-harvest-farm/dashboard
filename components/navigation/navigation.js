@@ -210,52 +210,52 @@ class LayoutContainer extends HTMLElement {
             <nav class="navigation-content">
             <div class="menu-label small-visibility small-menu">
               <div class="navigation-menu-small">
-              <a class="navigation-item-small nav-interations" href="/pages/dashboard">
+              <a class="navigation-item-small nav-interations" href="../../pages/dashboard">
               <i class="bi bi-house"></i>
               </a>
-              <a class="navigation-item-small nav-interations" href="/pages/resources">
+              <a class="navigation-item-small nav-interations" href="../../pages/resources">
                 <i class="bi bi-box-seam"></i>
               </a>
-              <a class="navigation-item-small nav-interations" href="/pages/monitoring">
+              <a class="navigation-item-small nav-interations" href="../../pages/monitoring">
                 <i class="bi bi-eye"></i>
               </a>
-              <a class="navigation-item-small nav-interations" href="/pages/notifications">
+              <a class="navigation-item-small nav-interations" href="../../pages/notifications">
                 <span class="notify-counter hidden-item"></span>  
                 <i class="bi bi-bell"></i>
               </a>
-              <a class="navigation-item-small nav-interations" href="/pages/faq">
+              <a class="navigation-item-small nav-interations" href="../../pages/faq">
                 <i class="bi bi-chat"></i>  
               </a>
               </div>
             </div>
 
                 <div class="navigation-menu hidden-item full-visibility menu-label">
-                <a class="navigation-item nav-interations" href="/pages/dashboard">
+                <a class="navigation-item nav-interations" href="../../pages/dashboard">
                 <i class="bi bi-house"></i>
                   <span>
                     Geral
                   </span>
                 </a>
-                <a class="navigation-item nav-interations" href="/pages/resources">
+                <a class="navigation-item nav-interations" href="../../pages/resources">
                   <i class="bi bi-box-seam"></i>
                   <span>
                   Recursos
                   </span>
                 </a>
-                <a class="navigation-item nav-interations" href="/pages/monitoring">
+                <a class="navigation-item nav-interations" href="../../pages/monitoring">
                   <i class="bi bi-eye"></i>
                   <span>
                   Monitoramento
                   </span>
                 </a>
-                <a class="navigation-item nav-interations" href="/pages/notifications">
+                <a class="navigation-item nav-interations" href="../../pages/notifications">
                   <i class="bi bi-bell"></i>
                   <span class="notify-counter hidden-item"></span>
                   <span>
                   Notificações
                   </span>
                 </a>
-                <a class="navigation-item nav-interations" href="/pages/faq">
+                <a class="navigation-item nav-interations" href="../../pages/faq">
                   <i class="bi bi-chat"></i>  
                   <span>
                   FAQ
@@ -353,7 +353,7 @@ class LayoutContainer extends HTMLElement {
     btnLogout.addEventListener("click", () => {
       localStorage.removeItem("user-login");
 
-      return window.location.href = "/pages/"
+      return window.location.href = "../../pages/index.html"
     });
   }
 }

@@ -4,7 +4,7 @@ var hasUserLogin = window.localStorage.getItem(userKey);
 
 window.addEventListener("load", function (event) {
   if (hasUserLogin) {
-    return window.document.location.href = "/pages/dashboard";
+    return window.document.location.href = "./dashboard";
   }
 });
 
