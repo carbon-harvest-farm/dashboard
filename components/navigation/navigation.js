@@ -353,7 +353,7 @@ class LayoutContainer extends HTMLElement {
     btnLogout.addEventListener("click", () => {
       localStorage.removeItem("user-login");
 
-      return window.location.href = "../../pages/index.html"
+      return window.location.href = "/index.html"
     });
   }
 }

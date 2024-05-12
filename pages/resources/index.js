@@ -5,6 +5,7 @@ for (const sector of resources) {
     totalResourcesQuantity += resource.quantity;
   }
 }
+
 const resourcesCounter = document.getElementById("totalResources");
 const sectorsCounter = document.getElementById("totalSectors");
 
