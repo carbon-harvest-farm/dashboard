@@ -1,40 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="./global.css">
   <link rel="stylesheet" href="./style.css">
-  <title>Carbon Harvest Farm</title>
+  <title>Carbon Harvert Farm</title>
 </head>
 
-<body class="container">
-  <section class="login-container">
-    <div class="login-welcome">
-      <i class="bi bi-key-fill"></i>
-      <h1>Faça login para continuar</h1>
+<body class="page">
+  <header class="header-container">
+    <nav class="header-content">
+      <a href="#">
+        <img class="logo" src="./assets/logo.png" alt="Logo de legumes terras e moedas">
+      </a>
+      <div class="header-items">
+        <a class="header-item" href="#how-section">Como</a>
+        <a class="header-item" href="#promotions">Preços</a>
+        <a class="header-item" href="#contract">Contratar</a>
+        <a class="header-item" href="/pages/login/">Entrar</a>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="overview">
+      <div class="overview-content">
+        <p class="overview-product">Carbon Harvest Farm</p>
+        <h1 class="overview-title">Isso é um ecossistema agroecológico inteligente.
+          <span class="overview-description">Plante, monitore, produza e venda com inteligencia.</span>
+        </h1>
+      </div>
+      <img class="overview-image" src="./assets/overview.png" alt="">
     </div>
-    <form id="formLogin" method="post" class="login-main">
-      <div class="login-mainitem">
-        <label for="userId">ID da instalação</label>
-        <input class="login-input" type="text" name="userId" id="loginID" placeholder="IDA133728">
+    <div id="how-section" class="row-center-start section g-15">
+      <div class="box-sized">
+        <img class="sprite-icon" src="./assets/coffe.png" alt="Moedas">
       </div>
-      <div class="login-mainitem">
-        <label for="userPassword">Senha</label>
-        <input class="login-input" type="password" name="userPassword" id="loginPassword">
+      <div class="column-start">
+        <h2 class="section-title">Como</h2>
+        <p class="section-description">Entenda como faremos</p>
       </div>
-      <div class="login-mainitem">
-        <p class="login-message" id="loginMessage"></p>
+    </div>
+    <section id="how" class="column-start g-15"></section>
+    <div class="row-center-start section g-15">
+      <div class="box-sized">
+        <img class="sprite-icon" src="./assets/coins.png" alt="Moedas">
       </div>
-      <div class="login-mainitem">
-        <button type="submit" class="login-button">
-          Entrar
-        </button>
+      <div class="column-start">
+        <h2 class="section-title">Preços</h2>
+        <p class="section-description">Veja nossos planos</p>
       </div>
-    </form>
-  </section>
-  <script src="../mocks/users.js"></script>
+    </div>
+    <section class="promotion" id="promotions">
+    </section>
+    <div class="row-center-start section g-15">
+      <div class="box-sized">
+        <img class="sprite-icon" src="./assets/handshake.png" alt="Moedas">
+      </div>
+      <div class="column-start">
+        <h2 class="section-title">Contratar</h2>
+        <p class="section-description">Seja o futuro!</p>
+      </div>
+    </div>
+    <section class="contract w-full" id="contract">
+      <div id="success-screen" class="success-screen hidden border-zinc-200">
+        <i class="bi bi-check-circle-fill success-icon"></i>
+        <p class="success-title">Sucesso!</p>
+        <p>Aguarde, entraremos em contato.</p>
+      </div>
+      <div id="contract-options" class="column-start w-full">
+        <p class="promotion-name">Selecione um plano</p>
+        <p class="promotion-description p-10-bottom">Clique para selecionar</p>
+      </div>
+      <form class="contract-form w-full w-full" id="contract-form" method="post">
+        <label for="firstName">Primeiro nome</label>
+        <input type="text" name="firstName" id="first-name">
+        <label for="lastName">Sobrenome</label>
+        <input type="text" name="lastName" id="last-name">
+        <label for="mail">Email</label>
+        <input type="email" name="mail" id="mail">
+        <label for="cell">Celular</label>
+        <input type="tel" name="cell" id="cell">
+        <div class="column-start" id="error-message">
+        </div>
+        <button class="contract-button">Enviar</button>
+      </form>
+    </section>
+  </div>
+  <script src="./mocks/plans.js"></script>
+  <script src="./mocks/how.js"></script>
   <script src="./index.js"></script>
 </body>
 

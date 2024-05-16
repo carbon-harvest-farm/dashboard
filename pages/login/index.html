@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="./style.css">
+  <title>Carbon Harvest Farm</title>
+</head>
+
+<body class="container">
+  <section class="login-container">
+    <div class="login-welcome">
+      <i class="bi bi-key-fill"></i>
+      <h1>Faça login para continuar</h1>
+    </div>
+    <form id="formLogin" method="post" class="login-main">
+      <div class="login-mainitem">
+        <label for="userId">ID da instalação</label>
+        <input class="login-input" type="text" name="userId" id="loginID" placeholder="IDA133728">
+      </div>
+      <div class="login-mainitem">
+        <label for="userPassword">Senha</label>
+        <input class="login-input" type="password" name="userPassword" id="loginPassword">
+      </div>
+      <div class="login-mainitem">
+        <p class="login-message" id="loginMessage"></p>
+      </div>
+      <div class="login-mainitem">
+        <button type="submit" class="login-button">
+          Entrar
+        </button>
+      </div>
+    </form>
+  </section>
+  <script src="../../mocks/users.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
