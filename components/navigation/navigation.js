@@ -211,7 +211,7 @@ class LayoutContainer extends HTMLElement {
             <div class="menu-label small-visibility small-menu">
               <div class="navigation-menu-small">
               <a class="navigation-item-small nav-interations" href="../../pages/dashboard">
-              <i class="bi bi-house"></i>
+              <i class="bi bi-boxes"></i>
               </a>
               <a class="navigation-item-small nav-interations" href="../../pages/resources">
                 <i class="bi bi-box-seam"></i>
@@ -231,9 +231,9 @@ class LayoutContainer extends HTMLElement {
 
                 <div class="navigation-menu hidden-item full-visibility menu-label">
                 <a class="navigation-item nav-interations" href="../../pages/dashboard">
-                <i class="bi bi-house"></i>
+                <i class="bi bi-boxes"></i>
                   <span>
-                    Geral
+                    Recomendações
                   </span>
                 </a>
                 <a class="navigation-item nav-interations" href="../../pages/resources">

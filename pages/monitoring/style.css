@@ -64,9 +64,9 @@
 
 .active-card {
   visibility: visible;
-  height: 250px;
+  height: 280px;
   transition: all 150ms;
-  min-width: 140px;
+  min-width: 180px;
 }
 
 .danger {
